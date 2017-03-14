@@ -14,6 +14,8 @@ RUN apt-get update -qq && \
     apt-get update -qq && \
     apt-get install -qqy docker-engine && \
     usermod -aG docker jenkins && \
-    chown -R jenkins:jenkins $JENKINS_HOME/
+    chown -R jenkins:jenkins $JENKINS_HOME/ \
+	apt-get install python make g++ \
+	
 
 USER jenkins
