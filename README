@@ -1,1 +1,0 @@
-docker run -p 8080:8080 -d -e "http_proxy=http://PROXY:PORT" -e "https_proxy=http://PROXY:PORT" --name jenkins -v /home/jenkins/jenkins_home:/var/jenkins_home jenkins_deux
