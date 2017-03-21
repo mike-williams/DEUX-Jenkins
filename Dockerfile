@@ -1,6 +1,10 @@
 FROM jenkins:2.32.1
 
+ARG DOCKER_GROUP_ID
+
 USER root
+
+RUN groupadd -g $DOCKER_GROUP_ID docker && gpasswd -a jenkins docker
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash 
 RUN apt-get install -y nodejs libapparmor-dev
@@ -17,5 +21,4 @@ RUN apt-get update -qq && \
     usermod -aG docker jenkins && \
     chown -R jenkins:jenkins $JENKINS_HOME/
 	
-
 USER jenkins
