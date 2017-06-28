@@ -1,4 +1,4 @@
-FROM jenkins:2.32.1
+FROM jenkins:2.60.1
 
 ARG DOCKER_GROUP_ID
 
